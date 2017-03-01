@@ -2,5 +2,7 @@
 - name: Test Hound deployment.
   hosts: localhost
   remote_user: root
+  vars:
+    hound_user: root
   roles:
     - ansible-role-hound
