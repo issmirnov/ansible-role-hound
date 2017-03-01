@@ -21,6 +21,7 @@ go_root: /usr/local/go # Location of go installation
 hound_port: 8301
 hound_server_name: hound # used in nginx server_name
 hound_user: # your dev user should be set here.
+hound_data_dir: /var/hound # stores config and data index.
 hound_config:
   max-concurrent-indexers: 2
   dbpath: data

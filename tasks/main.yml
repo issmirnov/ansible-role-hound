@@ -13,10 +13,10 @@
     - hound
     - houndd
 
-- name: create hound data dir in /etc/hound
+- name: create hound data dir in {{ hound_data_dir }}
   become: yes
   file:
-    dest: /etc/hound
+    dest: "{{ hound_data_dir }}"
     state: directory
     owner: "{{ hound_user }}"
     group: "{{ hound_user }}"
@@ -24,9 +24,9 @@
 - name: Write hound config.
   copy:
     content: "{{ hound_config | to_nice_json(indent=2) }}"
-    dest: /etc/hound/config.json
+    dest: "{{ hound_data_dir }}/config.json"
   notify:
-    - start hound
+    - restart hound
 
 - name: Write systemd service file
   template:
@@ -37,7 +37,7 @@
     mode: 0640
   become: yes
   notify:
-    - start hound
+    - restart hound
 
 - name: Write nginx config to /etc/nginx/sites-available/hound.conf
   template:

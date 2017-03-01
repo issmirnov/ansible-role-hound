@@ -1,6 +1,6 @@
 ---
-- name: start hound
-  service: name=hound state=started
+- name: restart hound
+  service: name=hound state=restarted
   become: yes
 
 - name: reload nginx

@@ -2,6 +2,7 @@
 go_root: /usr/local/go
 hound_port: 8301
 hound_server_name: hound
+hound_data_dir: /var/hound
 hound_user:
 hound_config:
   max-concurrent-indexers: 2
