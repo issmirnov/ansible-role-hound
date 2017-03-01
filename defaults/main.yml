@@ -1,0 +1,11 @@
+---
+go_root: /usr/local/go
+hound_port: 8301
+hound_server_name: hound
+hound_user:
+hound_config:
+  max-concurrent-indexers: 2
+  dbpath: data
+  repos:
+    HoundRole:
+      url: https://github.com/issmirnov/ansible-role-hound.git

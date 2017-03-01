@@ -1,0 +1,8 @@
+---
+- name: start hound
+  service: name=hound state=started
+  become: yes
+
+- name: reload nginx
+  service: name=nginx state=reloaded
+  become: yes

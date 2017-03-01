@@ -1,0 +1,11 @@
+# Nginx reverse proxy config for etsy/hound
+# Managed by ansible role: issmirnov.hound
+server {
+    listen 80;
+    server_name {{ hound_server_name }};
+    location / {
+        proxy_http_version 1.1;
+        proxy_pass http://localhost:{{ hound_port }};
+        proxy_set_header X-Forwarded-Host $host;
+    }
+}

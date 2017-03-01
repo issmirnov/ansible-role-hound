@@ -1,0 +1,21 @@
+galaxy_info:
+  author: Ivan Smirnov
+  description: Installs hound, a code search tool by etsy.
+  license: MIT
+  min_ansible_version: 2.2
+
+  platforms:
+  - name: Ubuntu
+    versions:
+      - vivid
+      - wily
+      - xenial
+      - yakkety
+  - name: Debian
+    versions:
+      - all
+
+  galaxy_tags:
+    - etsy
+    - hound
+    - codesearch
